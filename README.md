@@ -10,10 +10,12 @@ This guide will help you set up and run the Flask application for managing a sto
 ## Installation
 
 1. clone the repository
-   ```git clone https://github.com/Elgran666/finance_cleanup_UI_UX_improved.git```
-   ``` cd finance_cleanup_UI_UX_improved```
 
-2. install flask
+   ```git clone https://github.com/Elgran666/finance_cleanup_UI_UX_improved.git```
+2. then cd into it
+   ```cd finance_cleanup_UI_UX_improved```
+
+3. install flask
   ``` pip install flask```
 
 ## Running the Application
