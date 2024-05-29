@@ -10,16 +10,17 @@ This guide will help you set up and run the Flask application for managing a sto
 ## Installation
 
 1. clone the repository
-   git clone <repository_url>
-   cd <repository_directory>
+   ```git clone https://github.com/Elgran666/finance_cleanup_UI_UX_improved.git```
+   ``` cd finance_cleanup_UI_UX_improved```
 
 2. install flask
-   pip install flask
+  ``` pip install flask```
 
 ## Running the Application
 
 1. run the flask server
-   flask run
+   ``` flask run```
+
 
 2. open the application
    - open your web browser and navigate to the url provided by the flask server, typically http://127.0.0.1:5000
@@ -41,21 +42,21 @@ This guide will help you set up and run the Flask application for managing a sto
 if you need to clear the database, follow these steps:
 
 1. open sqlite3
-   sqlite3 finance.db
+   ```sqlite3 finance.db```
 
 2. clear tables
 
    2.1 clear transactions table
-   delete from transactions;
+  ``` delete from transactions;```
 
    2.2 reset counter for transactions table
-   update sqlite_sequence set seq = 0 where name = 'transactions';
+   ```update sqlite_sequence set seq = 0 where name = 'transactions';```
 
    2.3 clear users table
-   delete from users;
+  ``` delete from users;```
 
    2.4 reset counter for users table
-   update sqlite_sequence set seq = 0 where name = 'users';
+  ``` update sqlite_sequence set seq = 0 where name = 'users';```
 
 ## Additional Information
 
