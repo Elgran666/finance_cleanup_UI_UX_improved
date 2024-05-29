@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Apology
+{% endblock %}
+
+{% block main %}
+    <!-- button that goes back to registering again -->
+    <button class="btn btn-primary" onclick="history.back()">Go Back</button>
+    <br>
+    <br>
+    <!-- https://memegen.link/ -->
+    <!-- https://knowyourmeme.com/memes/grumpy-cat -->
+        <img alt="{{ top }}" class="border img-fluid"
+            src="https://api.memegen.link/images/custom/{{ top | urlencode }}/{{ bottom | urlencode }}.jpg?background=https://i.imgur.com/CsCgN7Ll.png&width=400"
+            title="{{ top }}">
+    <!-- button that goes back to registering again -->
+    <br>
+    <br>
+    <button class="btn btn-primary" onclick="history.back()">Go Back</button>
+
+{% endblock %}

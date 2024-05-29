@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Sell
+{% endblock %}
+
+{% block main %}
+<div class="portfolio">
+    <form action="/sell" method="post" style="margin-bottom: 20px;">
+        <div>
+            <select name="symbol" required>
+                <option value="" disabled selected>Choose a stock</option>
+                {% for stock in combined_stocks_in_portfolio %}
+                <option value="{{ stock }}">{{ stock }}</option>
+                {% endfor %}
+            </select>
+            <input type="number" name="shares" min="1" required placeholder="Number of shares">
+            <button type="submit" class="btn btn-primary">Sell Selected Stock</button>
+        </div>
+    </form>
+
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Stock Symbol</th>
+                <th>Stock Amount</th>
+                <th>Current Value</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for stock, amount in combined_stocks_in_portfolio.items() %}
+            <tr>
+                <form action="/sell" method="post">
+                    <td> {{ stock }}</td>
+                    <td> {{ amount }} </td>
+                    <td> ${{ current_stock_values[stock] }} </td>
+                    <td>
+                        <input type="number" name="shares" min="1" max="{{ amount }}" value="1" required>
+                        <button class="btn btn-primary" type="submit" name="symbol" value="{{ stock }}">Sell</button>
+                    </td>
+                </form>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

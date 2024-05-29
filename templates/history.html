@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+History
+{% endblock %}
+
+{% block main %}
+<div class="history_overview">
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Transaction Type</th>
+                <th>Timestamp</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for transaction in transaction_history %}
+            <tr>
+                <td>{{ transaction['symbol'] }}</td>
+                <td>{{ transaction['shares'] }}</td>
+                <td>${{ '%.2f'|format(transaction['price']) }}</td>
+                <td>{{ transaction['transaction_type'] | capitalize }}</td>
+                <td>{{ transaction['timestamp'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

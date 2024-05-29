@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block main %}
+<div class="portfolio_overview">
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Total Stock Value</th>
+                <th>Total Cash Value</th>
+                <th>Total Portfolio Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ total_stock_value | usd }}</td>
+                <td>{{ total_cash_value | usd }}</td>
+                <td>{{ total_portfolio_value | usd }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="portfolio">
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Stock Symbol</th>
+                <th>Stock Amount</th>
+                <th>Current Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for stock, shares in combined_stocks_in_portfolio.items() if shares > 0 %}
+            <tr>
+                <td>{{ stock }}</td>
+                <td>{{ shares }}</td>
+                <td>{{ current_stock_values[stock] | usd }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
