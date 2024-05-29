@@ -1,5 +1,17 @@
 # Stock Portfolio Management
 
+## Table of Contents
+1. [Introduction](#introduction)
+2. [Prerequisites](#prerequisites)
+3. [Installation](#installation)
+4. [Running the Application](#running-the-application)
+5. [Usage](#usage)
+   - [Create an account](#create-an-account)
+   - [Log in](#log-in)
+6. [Managing the Database](#managing-the-database)
+7. [Additional Information](#additional-information)
+
+
 ## Introduction
 This guide will help you set up and run the Flask application for managing a stock portfolio. Follow the steps below to install necessary dependencies, run the application, and manage the database.
 
